@@ -1,0 +1,107 @@
+{
+  "metals": {
+    "brass": {
+      "name": "Laiton",
+      "description": "Un alliage de cuivre et de zinc, connu pour son apparence dorée et sa malléabilité."
+    },
+    "leadsolder": {
+      "name": "Soudure au Plomb",
+      "description": "Un alliage de plomb et d'étain à bas point de fusion, utilisé pour assembler des métaux."
+    },
+    "molybdochalkos": {
+      "name": "Cuproplomb",
+      "description": "Un alliage historique de cuivre et de plomb."
+    },
+    "silversolder": {
+      "name": "Soudure à l'argent",
+      "description": "Un alliage d'argent et d'étain, connu pour sa solidité et son point de fusion plus élevé que la soudure au plomb."
+    },
+    "cupronickel": {
+      "name": "Cupronickel",
+      "description": "Un alliage de cuivre et de nickel, très résistant à la corrosion."
+    },
+    "copper": {
+      "name": "Cuivre",
+      "description": "Un métal rouge-orangé, commun en début de jeu, fondable dans un creuset, utilisé dans divers alliages et objets à paliers."
+    },
+    "gold": {
+      "name": "Or",
+      "description": "Un métal précieux jaune, doux et brillant, fondable dans un creuset, utilisé dans des alliages spécifiques et pour l'artisanat."
+    },
+    "silver": {
+      "name": "Argent",
+      "description": "Un métal de transition blanc, lustré et doux, excellent conducteur, fondable dans un creuset, utilisé dans des alliages spécifiques et pour l'artisanat."
+    },
+    "tinbronze": {
+      "name": "Bronze-étain",
+      "description": "Un alliage de bronze traditionnel composé principalement de cuivre et d'étain."
+    },
+    "bismuthbronze": {
+      "name": "Bronze-bismuth",
+      "description": "Un alliage de cuivre, de zinc et de bismuth."
+    },
+    "blackbronze": {
+      "name": "Bronze noir",
+      "description": "Un alliage très résistant de cuivre, d'or et d'argent."
+    },
+    "bismuth": {
+      "name": "Bismuth",
+      "description": "Un métal cassant, cristallin et blanc rougeâtre, principalement utilisé dans les alliages."
+    },
+    "lead": {
+      "name": "Plomb",
+      "description": "Un métal gris doux, malléable et lourd, principalement utilisé dans les alliages."
+    },
+    "tin": {
+      "name": "Étain",
+      "description": "Un métal doux, malléable et argenté, utilisé dans les alliages comme le bronze et pour le placage."
+    },
+    "zinc": {
+      "name": "Zinc",
+      "description": "Un métal blanc bleuté, modérément réactif, utilisé principalement dans la fabrication d'alliages comme le laiton et le bronze de bismuth."
+    },
+    "iron": {
+      "name": "Fer",
+      "description": "Un métal commun, solide et malléable, fondamental pour la fabrication d'outils et de structures."
+    },
+    "electrum": {
+      "name": "Électrum",
+      "description": "Un alliage naturel ou artificiel d'or et d'argent."
+    },
+    "nickel": {
+      "name": "Nickel",
+      "description": "Un métal blanc argenté, dur et ductile, couramment utilisé dans divers alliages."
+    }
+  },
+  "desired_quantity": "Quantité désirée",
+  "output_unit": "Unité de sortie",
+  "required_materials": "Matériaux Requis",
+  "ingots_short": "Lingots",
+  "nuggets_short": "Pépites",
+  "description_label": "Description",
+  "tooltip_casting_alloy_percent": "Pour les alliages, le pourcentage de métaux purs requis pour fondre l'alliage dans un creuset. Pour les métaux purs, cela représente l'unité de base.",
+  "tooltip_casting_alloy_nuggets": "Pour les alliages, le nombre de pépites de chaque métal pur requis pour fondre un lingot d'alliage. Pour les métaux purs, c'est le nombre de pépites dans un lingot.",
+  "forge_Crucible": "Creuset",
+  "forge_Bloomery": "Bas Fourneau",
+  "forge_Forge": "Forge",
+  "forge_Refractory Furnace": "Fourneau Réfractaire",
+  "not_applicable": "N/A",
+  "calculate_alloy_title": "Calculer la Composition de l'Alliage",
+  "unit_ingots": "Lingots",
+  "unit_metal_units": "Unités de Métal",
+  "instruction_alloy_components": "C'est un alliage. Saisissez le pourcentage pour chaque métal de base :",
+  "total_percentage_error": "Le pourcentage total doit être de 100 %. Total actuel : {currentTotal} %",
+  "percentage_out_of_range": "{metalName} : Le pourcentage {value}% est en dehors de la plage valide [{min}% - {max}%].",
+  "result_ingots": "Vous aurez besoin de :",
+  "result_nuggets": "pépites",
+  "no_alloys_found": "Aucun alliage avec composants trouvé.",
+  "slider_keyboard_info": "Utilisez les flèches &larr;/&rarr; pour ajuster de &plusmn;1, et &uarr;/&darr; pour &plusmn;10.",
+  "error_data_loading": "Erreur lors du chargement des données. Veuillez réessayer.",
+  "error_positive_quantity": "Veuillez entrer une quantité positive.",
+  "select_valid_alloy_and_quantity": "Veuillez sélectionner un alliage valide et entrer une quantité positive.",
+  "error_invalid_nuggets": "Erreur: Veuillez saisir un nombre valide de pépites pour {metalName}.",
+  "required_materials_for_nuggets": "Matériaux Requis pour {totalNuggets} pépites :",
+  "valid_range_nuggets": "Plage valide: [{min} - {max}] pépites.",
+  "value_not_available": "Valeur non disponible (erreur de calcul)",
+  "equivalent_ingots": "Ce qui équivaut à"
+}

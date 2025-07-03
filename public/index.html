@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="app-title-tag"></title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specific styles for the header, footer, and flags are now in style.css */
+        /* You can remove this <style> tag if all styles are in style.css */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/images/banner.png" alt="Application Banner">
+        </header>
+
+        <div id="flag-selector">
+            <img src="images/flags/uk.png" alt="English Flag" id="flag-en" title="Click to change language">
+            <img src="images/flags/fr.png" alt="French Flag" id="flag-fr" title="Click to change language">
+        </div>
+
+        <h1 id="main-app-title"></h1>
+        <label for="metal-select" id="label-metal-select"></label>
+        <select id="metal-select"></select>
+
+        <label for="desired-quantity" id="label-desired-quantity"></label>
+        <input type="number" id="desired-quantity" value="100" min="5"> <p id="output-unit-text"></p>
+        <div id="alloy-inputs">
+        </div>
+
+        <div id="validation-message" class="validation-message"></div>
+        <div id="results">
+        </div>
+
+        <footer>
+            <p>
+                © 2025 Vintage Story Alloy Calculator. Created by Laerinok. Licensed under GPL-3.0.
+                <a href="https://github.com/Laerinok/vintage-story-alloy-calculator" target="_blank">View on GitHub</a>.
+            </p>
+            <p>
+                Data based on the <a href="https://wiki.vintagestory.at/" target="_blank">Vintage Story Wiki</a>.
+            </p>
+            <p id="app-version">Version: v1.0.0 (July 3, 2025)</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

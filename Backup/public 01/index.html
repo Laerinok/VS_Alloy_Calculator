@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="app-title-tag">Calculateur d'Alliages</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="flag-selector">
+            <img src="images/flags/uk.png" alt="English Flag" id="flag-en">
+            <img src="images/flags/fr.png" alt="Drapeau Français" id="flag-fr">
+        </div>
+
+        <h1 id="main-app-title">Calculateur d'Alliages - Test Isolé</h1>
+
+        <label for="metal-select" id="label-metal-select">Sélectionnez un Alliage (pour les composants):</label>
+        <select id="metal-select"></select>
+
+        <label for="desired-quantity" id="label-desired-quantity">Quantité Souhaitée (en Unités de Métal):</label>
+        <input type="number" id="desired-quantity" value="100" min="5"> <p id="output-unit-text">Unité de Sortie: Unités de Métal (Pépites)</p>
+
+        <div id="alloy-inputs">
+        </div>
+
+        <div id="validation-message" class="validation-message"></div>
+        <div id="results">
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

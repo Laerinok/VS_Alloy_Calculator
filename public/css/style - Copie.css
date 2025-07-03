@@ -1,0 +1,372 @@
+/* public/css/style.css */
+
+/* Color Variables - Inspired by Vintage Story Press Kit */
+:root {
+    --vs-dark-brown: #3B2D22; /* Main background, deep wood/earth */
+    --vs-medium-brown: #614836; /* UI elements, borders, card backgrounds */
+    --vs-light-brown: #C8B496; /* Highlights, header text, accent elements */
+    --vs-stone-grey: #464646; /* Main content background, sturdy elements */
+    --vs-text-light: #F0E6D2; /* Main text color, off-white/cream */
+    --vs-accent-green: #7BA56C; /* Subtle accents, links, primary buttons */
+    --vs-highlight-yellow: #D4AF37; /* Gold/brass-like for stronger accents/active states */
+    /* Shadows for depth */
+    --vs-shadow-dark: rgba(0, 0, 0, 0.7);
+    --vs-shadow-medium: rgba(0, 0, 0, 0.5);
+    --vs-shadow-light: rgba(0, 0, 0, 0.2);
+    /* General design variables based on VS theme */
+    --primary-color: var(--vs-accent-green);
+    --primary-hover-color: #638C59; /* A slightly darker green on hover */
+    --secondary-color: var(--vs-stone-grey);
+    --background-color: var(--vs-dark-brown);
+    --container-bg-color: var(--vs-medium-brown);
+    --border-color: var(--vs-medium-brown);
+    --text-color: var(--vs-text-light);
+    --light-text-color: var(--vs-light-brown);
+    --info-text-color: var(--vs-light-brown);
+    --error-color: #E74C3C; /* A clearly visible error red */
+    --error-bg-color: rgba(231, 76, 60, 0.2); /* Light background for error */
+    --font-family: 'Arial', sans-serif; /* You might consider a more "rustic" font here if you load one */
+    --border-radius: 8px; /* Slightly less rounded for a more robust look */
+    --box-shadow: 0 4px 8px var(--vs-shadow-medium); /* More pronounced shadow */
+    --input-padding: 10px;
+    --button-padding: 10px 18px;
+}
+
+/* Basic Reset & Body Styles */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Main Container Styling */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: var(--container-bg-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--vs-stone-grey); /* Added a solid border */
+}
+
+h1, h2, h3, h4 {
+    color: var(--vs-light-brown); /* Accent color for titles */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Form Grouping */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--vs-text-light);
+}
+
+/* Input and Select Field Styling */
+input[type="number"],
+select {
+    width: calc(100% - (var(--input-padding) * 2));
+    padding: var(--input-padding);
+    margin-bottom: 10px;
+    border: 1px solid var(--vs-stone-grey); /* Stone grey border */
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: var(--vs-dark-brown); /* Darker input background */
+    color: var(--vs-text-light);
+}
+    /* Placeholder Style */
+    input[type="number"]::placeholder,
+    select::placeholder {
+        color: var(--vs-light-brown);
+        opacity: 0.7;
+    }
+
+
+/* Button Styling */
+button {
+    background-color: var(--primary-color);
+    color: var(--vs-text-light);
+    padding: var(--button-padding);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px var(--vs-shadow-light);
+}
+
+    button:hover {
+        background-color: var(--primary-hover-color);
+        transform: translateY(-1px); /* Slight lift effect */
+    }
+
+    button:active {
+        transform: translateY(0);
+        box-shadow: 0 1px 2px var(--vs-shadow-dark) inset; /* Pressed effect */
+    }
+
+/* Alloy Inputs Specific Styling */
+#alloy-inputs {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid var(--vs-stone-grey);
+    border-radius: var(--border-radius);
+    background-color: var(--vs-dark-brown); /* Darker background for the group */
+    box-shadow: inset 0 0 5px var(--vs-shadow-medium); /* Inner shadow for depth */
+}
+
+.alloy-input-group {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--vs-medium-brown); /* Background for each alloy group */
+    border-radius: var(--border-radius);
+    border: 1px solid var(--vs-dark-brown);
+    box-shadow: 0 2px 5px var(--vs-shadow-light);
+}
+
+/* Result and Message Areas */
+#results {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: var(--vs-dark-brown); /* Dark background for results */
+    border-radius: var(--border-radius);
+    border: 1px solid var(--vs-stone-grey);
+    color: var(--vs-text-light); /* Light text for results */
+    box-shadow: inset 0 0 5px var(--vs-shadow-medium);
+}
+
+    #results ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    #results li {
+        margin-bottom: 5px;
+    }
+
+    #results h4 {
+        color: var(--vs-highlight-yellow); /* Result title in accent yellow */
+    }
+
+
+/* Error and Info Messages */
+#validation-message {
+    color: var(--error-color);
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid var(--error-color);
+    background-color: var(--error-bg-color);
+    border-radius: var(--border-radius);
+    display: none;
+}
+
+/* Visual style for error inputs */
+.input-error {
+    border: 2px solid var(--error-color) !important;
+    box-shadow: 0 0 8px rgba(231, 76, 60, 0.7); /* Stronger shadow for error */
+}
+
+/* Style for individual component info messages */
+.component-info {
+    font-size: 0.9em;
+    color: var(--info-text-color);
+    font-style: italic;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
+
+/* Specific style for total info message (for 3+ components) */
+.component-info-total {
+    font-size: 1em;
+    color: var(--vs-highlight-yellow); /* Total in yellow for importance */
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-left: 3px solid var(--vs-highlight-yellow);
+    background-color: var(--vs-medium-brown); /* Total background */
+    box-shadow: 0 1px 3px var(--vs-shadow-light);
+}
+
+/* Styles for slider controls */
+.slider-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+    .slider-controls input[type="range"] {
+        flex-grow: 1;
+        min-width: 100px;
+        padding: 0;
+        margin: 0;
+        /* Specific slider styles to match the theme */
+        -webkit-appearance: none; /* Remove default style */
+        appearance: none;
+        height: 8px; /* Track thickness */
+        background: var(--vs-stone-grey); /* Track color */
+        outline: none;
+        opacity: 0.9;
+        transition: opacity .2s;
+        border-radius: 4px;
+    }
+
+        .slider-controls input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px; /* Cursor size */
+            height: 20px; /* Cursor size */
+            background: var(--vs-highlight-yellow); /* Cursor color */
+            cursor: grab;
+            border-radius: 50%; /* Circular shape */
+            border: 2px solid var(--vs-text-light); /* Cursor border */
+            box-shadow: 0 0 5px var(--vs-shadow-dark);
+            margin-top: -6px; /* Adjust vertical cursor position */
+        }
+
+        .slider-controls input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: var(--vs-highlight-yellow);
+            cursor: grab;
+            border-radius: 50%;
+            border: 2px solid var(--vs-text-light);
+            box-shadow: 0 0 5px var(--vs-shadow-dark);
+        }
+
+.slider-btn {
+    padding: 6px 12px; /* Slightly less padding for slider buttons */
+    font-size: 0.85em;
+    background-color: var(--primary-color);
+    color: var(--vs-text-light);
+    border: 1px solid var(--vs-medium-brown); /* Light border */
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px var(--vs-shadow-light);
+}
+
+    .slider-btn:hover {
+        background-color: var(--primary-hover-color);
+        transform: translateY(-1px);
+    }
+
+    .slider-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 1px 2px var(--vs-shadow-dark) inset;
+    }
+
+/* Style for slider value display */
+label span[id^="slider-value-"] {
+    margin-left: 10px;
+    font-weight: normal;
+    color: var(--vs-highlight-yellow); /* Slider value in yellow */
+}
+
+/* Adjustments for labels and inputs in general for better spacing */
+.form-group label {
+    margin-bottom: 5px;
+}
+
+/* Styles for smaller screens (smartphones) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .slider-controls {
+        /* No longer use flex-wrap here, as we will manually organize them */
+        flex-wrap: nowrap; /* Prevents elements from wrapping inside this container */
+        justify-content: space-between; /* Spaces elements at ends */
+        gap: 0; /* Resets gap for finer control */
+        margin-top: 10px;
+        align-items: center; /* Ensures vertical alignment */
+    }
+
+        /* Containers for left and right buttons */
+        .slider-controls .left-buttons,
+        .slider-controls .right-buttons {
+            display: flex;
+            gap: 5px; /* Spacing between buttons on each side */
+        }
+
+        .slider-controls input[type="range"] {
+            flex-grow: 1; /* Slider takes remaining space in the middle */
+            margin: 0 10px; /* Horizontal margin to separate from buttons */
+            max-width: none; /* Remove any width restriction if necessary */
+            flex-basis: auto; /* Let flex-grow handle width */
+        }
+
+        .slider-controls button.slider-btn {
+            /* Keep button styles but remove flex-basis/min-width that caused forced wrapping */
+            flex: none; /* Do not let flex manage size, use padding */
+            padding: 8px 10px;
+            font-size: 0.85em;
+            min-width: unset; /* Undo previous min-width */
+        }
+
+    .alloy-input-group label,
+    .slider-info,
+    .component-info {
+        text-align: center;
+        font-size: 0.9em;
+    }
+
+    .alloy-input-group {
+        padding: 10px;
+    }
+}
+
+/* Styles added for header, footer, and flags */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    header img {
+        max-width: 100%; /* Ensures banner is responsive */
+        height: auto;
+    }
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc; /* Small line to separate footer */
+    font-size: 0.9em;
+    color: #666;
+}
+
+    footer a {
+        color: #007bff; /* Standard link color */
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+#flag-selector {
+    text-align: right; /* Aligns content (flags) to the right */
+    padding-right: 20px; /* Adds a small right margin */
+    margin-bottom: 10px; /* Adds some space below the flags */
+}
+
+    #flag-selector img {
+        cursor: pointer; /* Changes cursor to pointer on hover */
+        margin-left: 5px; /* Adds a small spacing between flags */
+    }

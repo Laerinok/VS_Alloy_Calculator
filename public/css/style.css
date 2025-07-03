@@ -1,0 +1,429 @@
+/* public/css/style.css */
+
+/* Color Variables - Inspired by Vintage Story Press Kit */
+:root {
+    --vs-dark-brown: #3B2D22; /* Main background, deep wood/earth */
+    --vs-medium-brown: #614836; /* UI elements, borders, card backgrounds */
+    --vs-light-brown: #C8B496; /* Highlights, header text, accent elements */
+    --vs-stone-grey: #464646; /* Main content background, sturdy elements */
+    --vs-text-light: #F0E6D2; /* Main text color, off-white/cream */
+    --vs-accent-green: #7BA56C; /* Subtle accents, links, primary buttons */
+    --vs-highlight-yellow: #D4AF37; /* Gold/brass-like for stronger accents/active states */
+    /* Shadows for depth */
+    --vs-shadow-dark: rgba(0, 0, 0, 0.7);
+    --vs-shadow-medium: rgba(0, 0, 0, 0.5);
+    --vs-shadow-light: rgba(0, 0, 0, 0.2);
+    --vs-shadow-soft: rgba(0, 0, 0, 0.3); /* Softer shadow for modern depth */
+    /* General design variables based on VS theme */
+    --primary-color: var(--vs-accent-green);
+    --primary-hover-color: #638C59; /* A slightly darker green on hover */
+    --secondary-color: var(--vs-stone-grey);
+    --background-color: var(--vs-dark-brown);
+    --container-bg-color: var(--vs-medium-brown);
+    --border-color: var(--vs-medium-brown);
+    --text-color: var(--vs-text-light);
+    --light-text-color: var(--vs-light-brown);
+    --info-text-color: var(--vs-light-brown);
+    --error-color: #E74C3C; /* A clearly visible error red */
+    --error-bg-color: rgba(231, 76, 60, 0.2); /* Light background for error */
+    --font-family: 'Arial', sans-serif; /* You might consider a more "rustic" font here if you load one */
+    --border-radius: 8px; /* Slightly less rounded for a more robust look */
+    --box-shadow: 0 4px 12px var(--vs-shadow-medium); /* More pronounced shadow for depth */
+    --input-padding: 12px; /* Slightly more padding for inputs */
+    --button-padding: 12px 20px; /* Slightly more padding for buttons */
+}
+
+/* Basic Reset & Body Styles */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    /* Optional: Add a subtle background pattern for a more "Vintage Story" feel */
+    /* background-image: url('../images/bg-texture.png'); */
+    /* background-repeat: repeat; */
+    /* background-size: 100px; */
+}
+
+/* Main Container Styling */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: var(--container-bg-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--vs-stone-grey); /* Added a solid border */
+    /* Add a subtle gradient for depth */
+    background: linear-gradient(145deg, var(--vs-medium-brown), #553e2e); /* Slightly darker shade for gradient */
+}
+
+h1, h2, h3, h4 {
+    color: var(--vs-light-brown); /* Accent color for titles */
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px var(--vs-shadow-dark); /* Subtle text shadow for titles */
+}
+
+/* Form Grouping */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--vs-text-light);
+}
+
+/* Input and Select Field Styling */
+input[type="number"],
+select {
+    width: calc(100% - (var(--input-padding) * 2));
+    padding: var(--input-padding);
+    margin-bottom: 10px;
+    border: 1px solid var(--vs-stone-grey); /* Stone grey border */
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: var(--vs-dark-brown); /* Darker input background */
+    color: var(--vs-text-light);
+    box-shadow: inset 0 1px 3px var(--vs-shadow-dark); /* Inner shadow for depth */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+    /* Placeholder Style */
+    input[type="number"]::placeholder,
+    select::placeholder {
+        color: var(--vs-light-brown);
+        opacity: 0.7;
+    }
+
+    input[type="number"]:focus,
+    select:focus {
+        border-color: var(--vs-accent-green); /* Highlight border on focus */
+        box-shadow: inset 0 1px 3px var(--vs-shadow-dark), 0 0 0 3px rgba(123, 165, 108, 0.5); /* Outer glow */
+        outline: none;
+    }
+
+
+/* Button Styling */
+button {
+    background-color: var(--primary-color);
+    color: var(--vs-text-light);
+    padding: var(--button-padding);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 6px var(--vs-shadow-soft); /* Softer, more modern shadow */
+    text-shadow: 1px 1px 2px var(--vs-shadow-dark); /* Text shadow for readability */
+}
+
+    button:hover {
+        background-color: var(--primary-hover-color);
+        transform: translateY(-2px); /* More pronounced lift effect */
+        box-shadow: 0 6px 12px var(--vs-shadow-medium); /* Larger shadow on hover */
+    }
+
+    button:active {
+        transform: translateY(0);
+        box-shadow: 0 1px 2px var(--vs-shadow-dark) inset; /* Pressed effect */
+    }
+
+/* Alloy Inputs Specific Styling (as a distinct "card") */
+#alloy-inputs {
+    margin-top: 25px; /* More space from previous section */
+    padding: 20px; /* More padding */
+    border: 1px solid var(--vs-stone-grey);
+    border-radius: var(--border-radius);
+    background-color: var(--vs-dark-brown); /* Darker background for the group */
+    box-shadow: inset 0 0 8px var(--vs-shadow-medium), 0 4px 8px var(--vs-shadow-soft); /* Inner and outer shadow */
+    background: linear-gradient(145deg, var(--vs-dark-brown), #2f241c); /* Subtle gradient for depth */
+}
+
+.alloy-input-group {
+    margin-bottom: 20px; /* More space between groups */
+    padding: 15px; /* More padding */
+    background-color: var(--vs-medium-brown); /* Background for each alloy group */
+    border-radius: var(--border-radius);
+    border: 1px solid var(--vs-dark-brown);
+    box-shadow: 0 3px 6px var(--vs-shadow-light); /* Softer shadow */
+}
+
+/* Result and Message Areas (as a distinct "card") */
+#results {
+    margin-top: 30px;
+    padding: 20px; /* More padding */
+    background-color: var(--vs-dark-brown); /* Dark background for results */
+    border-radius: var(--border-radius);
+    border: 1px solid var(--vs-stone-grey);
+    color: var(--vs-text-light); /* Light text for results */
+    box-shadow: inset 0 0 8px var(--vs-shadow-medium), 0 4px 8px var(--vs-shadow-soft);
+    background: linear-gradient(145deg, var(--vs-dark-brown), #2f241c); /* Subtle gradient for depth */
+}
+
+    #results ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    #results li {
+        margin-bottom: 8px; /* More space between list items */
+    }
+
+    #results h4 {
+        color: var(--vs-highlight-yellow); /* Result title in accent yellow */
+        text-shadow: 1px 1px 2px var(--vs-shadow-dark);
+    }
+
+
+/* Error and Info Messages */
+#validation-message {
+    color: var(--error-color);
+    font-weight: bold;
+    margin-top: 15px; /* More margin */
+    margin-bottom: 20px; /* More margin */
+    padding: 12px; /* More padding */
+    border: 1px solid var(--error-color);
+    background-color: var(--error-bg-color);
+    border-radius: var(--border-radius);
+    display: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for message */
+}
+
+/* Visual style for error inputs */
+.input-error {
+    border: 2px solid var(--error-color) !important;
+    box-shadow: inset 0 0 8px rgba(231, 76, 60, 0.7), 0 0 10px rgba(231, 76, 60, 0.5); /* Stronger shadow for error */
+}
+
+/* Style for individual component info messages */
+.component-info {
+    font-size: 0.9em;
+    color: var(--info-text-color);
+    font-style: italic;
+    margin-top: 5px; /* More margin */
+    margin-bottom: 10px; /* More margin */
+    padding-left: 5px;
+}
+
+/* Specific style for total info message (for 3+ components) */
+.component-info-total {
+    font-size: 1em;
+    color: var(--vs-highlight-yellow); /* Total in yellow for importance */
+    font-weight: bold;
+    margin-top: 15px; /* More margin */
+    margin-bottom: 20px; /* More margin */
+    padding: 10px; /* More padding */
+    border-left: 4px solid var(--vs-highlight-yellow); /* Thicker border */
+    background-color: var(--vs-medium-brown); /* Total background */
+    box-shadow: 0 2px 5px var(--vs-shadow-light);
+    border-radius: var(--border-radius); /* Rounded corners for the total info box */
+}
+
+/* Styles for slider controls */
+.slider-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* More space between elements */
+    margin-bottom: 15px; /* More margin */
+}
+
+    .slider-controls input[type="range"] {
+        flex-grow: 1;
+        min-width: 100px;
+        padding: 0;
+        margin: 0;
+        /* Specific slider styles to match the theme */
+        -webkit-appearance: none; /* Remove default style */
+        appearance: none;
+        height: 10px; /* Thicker track */
+        background: var(--vs-stone-grey); /* Track color */
+        outline: none;
+        opacity: 0.9;
+        transition: opacity .2s;
+        border-radius: 5px; /* Slightly more rounded track */
+        box-shadow: inset 0 1px 3px var(--vs-shadow-dark); /* Inner shadow for track */
+    }
+
+        .slider-controls input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px; /* Larger cursor */
+            height: 24px; /* Larger cursor */
+            background: var(--vs-highlight-yellow); /* Cursor color */
+            cursor: grab;
+            border-radius: 50%; /* Circular shape */
+            border: 3px solid var(--vs-text-light); /* Thicker border for cursor */
+            box-shadow: 0 0 8px var(--vs-shadow-dark); /* More pronounced shadow */
+            margin-top: -7px; /* Adjust vertical cursor position */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .slider-controls input[type="range"]::-webkit-slider-thumb:active {
+                cursor: grabbing;
+                box-shadow: 0 0 12px var(--vs-highlight-yellow); /* Glow on active */
+            }
+
+        .slider-controls input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: var(--vs-highlight-yellow);
+            cursor: grab;
+            border-radius: 50%;
+            border: 3px solid var(--vs-text-light);
+            box-shadow: 0 0 8px var(--vs-shadow-dark);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .slider-controls input[type="range"]::-moz-range-thumb:active {
+                cursor: grabbing;
+                box-shadow: 0 0 12px var(--vs-highlight-yellow);
+            }
+
+
+.slider-btn {
+    padding: 8px 15px; /* More padding for slider buttons */
+    font-size: 0.9em;
+    background-color: var(--primary-color);
+    color: var(--vs-text-light);
+    border: 1px solid var(--vs-medium-brown); /* Light border */
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px var(--vs-shadow-light);
+}
+
+    .slider-btn:hover {
+        background-color: var(--primary-hover-color);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px var(--vs-shadow-medium);
+    }
+
+    .slider-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 1px 2px var(--vs-shadow-dark) inset;
+    }
+
+/* Style for slider value display */
+label span[id^="slider-value-"] {
+    margin-left: 10px;
+    font-weight: normal;
+    color: var(--vs-highlight-yellow); /* Slider value in yellow */
+    font-size: 1.1em; /* Slightly larger font */
+}
+
+/* Adjustments for labels and inputs in general for better spacing */
+.form-group label {
+    margin-bottom: 8px;
+}
+
+/* Styles for smaller screens (smartphones) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Less padding on small screens */
+    }
+
+    .container {
+        padding: 20px; /* Less padding for container on small screens */
+        margin: 20px auto;
+    }
+
+    .slider-controls {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 0;
+        margin-top: 10px;
+        align-items: center;
+    }
+
+        .slider-controls .left-buttons,
+        .slider-controls .right-buttons {
+            display: flex;
+            gap: 5px;
+        }
+
+        .slider-controls input[type="range"] {
+            flex-grow: 1;
+            margin: 0 10px;
+            max-width: none;
+            flex-basis: auto;
+        }
+
+        .slider-controls button.slider-btn {
+            flex: none;
+            padding: 8px 10px;
+            font-size: 0.85em;
+            min-width: unset;
+        }
+
+    .alloy-input-group label,
+    .slider-info,
+    .component-info {
+        text-align: center;
+        font-size: 0.9em;
+    }
+
+    .alloy-input-group {
+        padding: 10px;
+    }
+}
+
+/* Styles added for header, footer, and flags */
+header {
+    text-align: center;
+    margin-bottom: 25px; /* More space below banner */
+}
+
+    header img {
+        max-width: 100%; /* Ensures banner is responsive */
+        height: auto;
+        border-radius: var(--border-radius); /* Rounded corners for the banner */
+        box-shadow: 0 4px 8px var(--vs-shadow-soft); /* Subtle shadow for banner */
+    }
+
+footer {
+    text-align: center;
+    margin-top: 30px; /* Adjust margin since it's inside the container now */
+    padding-top: 20px;
+    border-top: 1px solid var(--vs-stone-grey); /* Use a themed color for the border */
+    font-size: 0.9em;
+    color: var(--vs-light-brown); /* Lighter text for footer */
+    /* No need for max-width or margin: auto here as it's inside .container */
+}
+
+    footer a {
+        color: var(--vs-accent-green); /* Themed link color */
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: var(--primary-hover-color);
+        }
+
+#flag-selector {
+    text-align: right; /* Aligns content (flags) to the right */
+    padding-right: 20px; /* Adds a small right margin */
+    margin-bottom: 20px; /* More space below flags */
+}
+
+    #flag-selector img {
+        cursor: pointer; /* Changes cursor to pointer on hover */
+        margin-left: 8px; /* More spacing between flags */
+        width: 32px; /* Standard flag size */
+        height: 32px;
+        border: 1px solid var(--vs-stone-grey); /* Subtle border for flags */
+        border-radius: 4px; /* Slightly rounded flags */
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        #flag-selector img:hover {
+            transform: translateY(-2px); /* Lift effect on hover */
+            box-shadow: 0 4px 8px var(--vs-shadow-soft); /* Shadow on hover */
+        }
