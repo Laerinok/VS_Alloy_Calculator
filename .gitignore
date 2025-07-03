@@ -70,5 +70,5 @@ node_modules/
 
 # personal addons
 *.bat
-./Backup/
-./.vs/
+Backup/
+.vs/
